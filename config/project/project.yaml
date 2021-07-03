@@ -1,0 +1,17 @@
+dateModified: 1625307687
+email:
+  fromEmail: mahjoor_samiullah@hotmail.com
+  fromName: 'Craft Samiullahmahjoor'
+  transportType: craft\mail\transportadapters\Sendmail
+system:
+  edition: solo
+  live: true
+  name: 'Craft Samiullahmahjoor'
+  schemaVersion: 3.6.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true
