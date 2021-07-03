@@ -1,8 +1,17 @@
-dateModified: 1625307687
+dateModified: 1625316203
 email:
   fromEmail: mahjoor_samiullah@hotmail.com
   fromName: 'Craft Samiullahmahjoor'
   transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  embed-boards:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  labyrintoom-custom:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true

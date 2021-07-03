@@ -1,0 +1,40 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Labyrintoom Custom plugin for Craft CMS 3.x
+ *
+ * Labyrintoom Custom index.twig
+ *
+ * @author    Samiullah Mahjoor
+ * @copyright Copyright (c) 2021 Samiullah Mahjoor
+ * @link      https://samiullahmahjoor.info
+ * @package   LabyrintoomCustom
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("labyrintoom\\labyrintoomcustom\\assetbundles\\labyrintoomcustom\\LabyrintoomCustomAsset") %}
+{% do view.registerAssetBundle("labyrintoom\\labyrintoomcustom\\assetbundles\\indexcpsection\\IndexCPSectionAsset") %}
+
+{% set docsUrl = "https://github.com/Samiullah Mahjoor/labyrintoom-custom/blob/master/README.md" %}
+
+{% set title = "Labyrintoom Custom" %}
+
+{% set pluginCpUrl = url('labyrintoom-custom') %}
+
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@labyrintoom/labyrintoomcustom/assetbundles/indexcpsection/dist', true) ~ '/img/Index-icon.svg' %}
+
+{% set extraPageHeaderHtml %}
+    <div class="buttons">
+        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('labyrintoom-custom') }}</a>
+    </div>
+{% endset %}
+
+{% set content %}
+    <h2>{{ "Index CP Section body goes here"|t('labyrintoom-custom') }}</h2>
+    <img src="{{ iconUrl }}" height="64" width="64" />
+    <p class="textline"></p>
+{% endset %}

@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Labyrintoom Custom plugin for Craft CMS
+ *
+ * LabyrintoomCustomField Field Settings
+ *
+ * @author    Samiullah Mahjoor
+ * @copyright Copyright (c) 2021 Samiullah Mahjoor
+ * @link      https://samiullahmahjoor.info
+ * @package   LabyrintoomCustom
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("labyrintoom\\labyrintoomcustom\\assetbundles\\labyrintoomcustom\\LabyrintoomCustomAsset") %}
+
+{{ forms.textField({
+    label: 'Some Attribute',
+    instructions: 'Enter some attribute here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: field['someAttribute']})
+}}
