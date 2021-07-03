@@ -1,11 +1,22 @@
 {
   "require": {
     "craftcms/cms": "3.6.17",
-    "vlucas/phpdotenv": "^3.4.0"
+    "cstudios/embed-boards": "v1.0.1",
+    "vlucas/phpdotenv": "^3.4.0",
+    "labyrintoom/labyrintoom-custom": "v1.0.0"
   },
   "require-dev": {
     "yiisoft/yii2-shell": "^2.0.3"
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "plugins/labyrintoomcustom",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
   "autoload": {
     "psr-4": {
       "modules\\": "modules/"

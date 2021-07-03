@@ -31,15 +31,6 @@ return array (
       '@yii/queue/stomp' => $vendorDir . '/yiisoft/yii2-queue/src/drivers/stomp',
     ),
   ),
-  'yii2tech/ar-softdelete' => 
-  array (
-    'name' => 'yii2tech/ar-softdelete',
-    'version' => '1.0.4.0',
-    'alias' => 
-    array (
-      '@yii2tech/ar/softdelete' => $vendorDir . '/yii2tech/ar-softdelete/src',
-    ),
-  ),
   'yiisoft/yii2-debug' => 
   array (
     'name' => 'yiisoft/yii2-debug',
@@ -47,6 +38,15 @@ return array (
     'alias' => 
     array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
+    ),
+  ),
+  'yii2tech/ar-softdelete' => 
+  array (
+    'name' => 'yii2tech/ar-softdelete',
+    'version' => '1.0.4.0',
+    'alias' => 
+    array (
+      '@yii2tech/ar/softdelete' => $vendorDir . '/yii2tech/ar-softdelete/src',
     ),
   ),
   'creocoder/yii2-nested-sets' => 
@@ -57,5 +57,15 @@ return array (
     array (
       '@creocoder/nestedsets' => $vendorDir . '/creocoder/yii2-nested-sets/src',
     ),
+  ),
+  'yiisoft/yii2-shell' => 
+  array (
+    'name' => 'yiisoft/yii2-shell',
+    'version' => '2.0.4.0',
+    'alias' => 
+    array (
+      '@yii/shell' => $vendorDir . '/yiisoft/yii2-shell',
+    ),
+    'bootstrap' => 'yii\\shell\\Bootstrap',
   ),
 );

@@ -1,0 +1,49 @@
+{
+    "name": "labyrintoom/labyrintoom-custom",
+    "description": "Custom Craft 3 plugin for Labyrintoom",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "labyrintoom custom"
+    ],
+    "support": {
+        "docs": "https://github.com/SamiullahMahjoor/labyrintoom-custom/blob/master/README.md",
+        "issues": "https://github.com/SamiullahMahjoor/labyrintoom-custom/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samiullah Mahjoor",
+            "homepage": "https://samiullahmahjoor.info"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "labyrintoom\\labyrintoomcustom\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Labyrintoom Custom",
+        "handle": "labyrintoom-custom",
+        "developer": "Samiullah Mahjoor",
+        "developerUrl": "https://samiullahmahjoor.info",
+        "documentationUrl": "https://github.com/SamiullahMahjoor/labyrintoom-custom/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/SamiullahMahjoor/labyrintoom-custom/master/CHANGELOG.md",
+        "components": {
+            "labyrintoomCustomService": "labyrintoom\\labyrintoomcustom\\services\\LabyrintoomCustomService"
+        },
+        "class": "labyrintoom\\labyrintoomcustom\\LabyrintoomCustom"
+    }
+}
