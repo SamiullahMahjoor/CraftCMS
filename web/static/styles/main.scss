@@ -1,0 +1,24 @@
+// bulma
+$gap: 32px;
+@import 'plugins/bulma-0.9.1/bulma';
+
+// libs
+@import 'plugins/normalize';
+
+// base
+@import 'base/z-index';
+@import 'base/reset';
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/structure';
+@import 'classes';
+
+// components
+@import 'components/quick_edit';
+
+// pages
+@import 'pages/home/home_example';
+
+
+// temp
+@import 'temp';

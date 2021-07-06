@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: account
+name: Account
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  ab98b48a-ec5f-485a-95a7-bac472bf7d4b: # Craft Custom
+    enabledByDefault: true
+    hasUrls: true
+    template: _account\profile
+    uriFormat: 'account/{slug}'
+structure:
+  maxLevels: null
+  uid: 4bd91801-6491-4de6-b3cd-e5494bf8df9b
+type: structure

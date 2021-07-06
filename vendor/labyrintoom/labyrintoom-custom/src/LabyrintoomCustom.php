@@ -13,6 +13,7 @@ namespace labyrintoom\labyrintoomcustom;
 use labyrintoom\labyrintoomcustom\services\LabyrintoomCustomService as LabyrintoomCustomServiceService;
 use labyrintoom\labyrintoomcustom\variables\LabyrintoomCustomVariable;
 use labyrintoom\labyrintoomcustom\models\Settings;
+use labyrintoom\labyrintoomcustom\models\AnonymousEmail;
 use labyrintoom\labyrintoomcustom\fields\LabyrintoomCustomField as LabyrintoomCustomFieldField;
 
 use Craft;
@@ -25,9 +26,10 @@ use craft\services\Fields;
 use craft\web\twig\variables\CraftVariable;
 use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterUrlRulesEvent;
-
+use craft\elements\User;
+use craft\events\ModelEvent;
 use yii\base\Event;
-
+use craft\base\Element;
 /**
  * Class LabyrintoomCustom
  *
@@ -134,6 +136,17 @@ class LabyrintoomCustom extends Plugin
             ),
             __METHOD__
         );
+        Event::on(
+            User::class,
+            User::EVENT_BEFORE_SAVE,
+            function(ModelEvent $event) {
+                $email_handler = new AnonymousEmail();
+                $random_email = $email_handler->generateEmail();
+                echo "$random_email <br><br>";
+                $user = $event->sender;
+                $user->setFieldValue("anonymousEmail",$random_email);
+            });
+
     }
 
     // Protected Methods
