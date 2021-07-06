@@ -1,0 +1,8 @@
+handle: profile
+hasTitleField: true
+name: Profile
+section: 3845c4c9-fa28-4ab7-86b0-b636756af10d # Account
+sortOrder: 2
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

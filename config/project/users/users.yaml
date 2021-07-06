@@ -1,0 +1,6 @@
+allowPublicRegistration: true
+defaultGroup: 6f113f3d-e270-4bbb-a8f2-b1e9d870e1d5 # Members
+photoSubpath: members
+photoVolumeUid: 9091ab01-e95f-4cdf-b2f1-0c00232fc58e # Assets
+requireEmailVerification: false
+suspendByDefault: false

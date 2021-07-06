@@ -1,0 +1,11 @@
+contentColumnType: string
+fieldGroup: 9582b605-12dd-49d4-ae55-6b9b0c9b3809 # Members
+handle: anonymousEmail
+instructions: ''
+name: 'Anonymous Email'
+searchable: false
+settings:
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

@@ -1,0 +1,14 @@
+tabs:
+  -
+    elements:
+      -
+        fieldUid: 6f8d61fc-ffa5-4941-9668-e56b7593fc85 # Anonymous Email
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+    name: 'Anonymous Email'
+    sortOrder: 1
