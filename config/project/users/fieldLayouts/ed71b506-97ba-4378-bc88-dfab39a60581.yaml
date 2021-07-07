@@ -12,3 +12,16 @@ tabs:
         width: 100
     name: 'Anonymous Email'
     sortOrder: 1
+  -
+    elements:
+      -
+        fieldUid: 58ae8209-802f-49f0-8a16-c3404c9c60b1 # User Specialties
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+    name: 'User Specialties'
+    sortOrder: 2

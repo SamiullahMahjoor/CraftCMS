@@ -1,107 +1,89 @@
+{% extends '_layouts/layout_main' %}
+
+{% set body_class = 'page-account profile' %}
 {# Require that a user is logged in to view this form. #}
 {% requireLogin %}
 
-{% macro errorList(errors) %}
-  {% if errors %}
-    {{ ul(errors, {class: 'errors'}) }}
-  {% endif %}
-{% endmacro %}
+{% block content %}
+	{% macro errorList(errors) %}
+		{% if errors %}
+			{{ ul(errors, {class: 'errors'}) }}
+		{% endif %}
+	{% endmacro %}
 
-{# If there were any validation errors, a `user` variable will be passed to the
-   template, which contains the posted values and validation errors. If that’s not
-   set, we’ll default to the current user. #}
-{% set user = user ?? currentUser %}
+	{# If there were any validation errors, a `user` variable will be passed to the
+			   template, which contains the posted values and validation errors. If that’s not
+			   set, we’ll default to the current user. #}
+	{% set user = user ?? currentUser %}
 
-{% if user.hasErrors() %}
-  <p>Unable to save your profile.</p>
-{% endif %}
-<h1>{{ currentUser.username }}</h1>
-<p>Your Ananymous email is <a href="mailto:{{ user.anonymousEmail }}">{{ user.anonymousEmail }}</a></p>
+	{% if user.hasErrors() %}
+		<p>Unable to save your profile.</p>
+	{% endif %}
+	<header class="bg-primary bg-gradient text-white">
+		<div class="container px-4 text-center">
+			<h1 class="fw-bolder">Welcome to Scrolling Nav</h1>
+			<p class="lead">A functional Bootstrap 5 boilerplate for one page scrolling websites</p>
+			<a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
+		</div>
+	</header>
+	<div class="container" style="margin-top:70px;">
+		<div class="col-md-6 offset-3">
+			<h1 class="text-center">Hello
+				{{ currentUser.username }}!</h1>
+			<p class="text-center">Your Ananymous email is
+				<a href="mailto:{{ user.anonymousEmail }}">{{ user.anonymousEmail }}</a>
+			</p>
 
-<form method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-  {{ csrfInput() }}
-  {{ actionInput('users/save-user') }}
-  {{ hiddenInput('userId', user.id) }}
-  {{ redirectInput("users/#{currentUser.username}") }}
+			<form method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+				{{ csrfInput() }}
+				{{ actionInput('users/save-user') }}
+				{{ hiddenInput('userId', user.id) }}
+				{{ redirectInput("users/#{currentUser.username}") }}
+				<div class="form-group">
+					<label for="first-name">First Name</label>
+					{{ input('text', 'firstName', user.firstName, { id: 'first-name', class: user.hasErrors('firstName') ? 'error',  autocomplete: 'given-name',  class: 'form-control',}) }}
+					{{ _self.errorList(user.getErrors('firstName')) }}
+				</div>
+				<div class="form-group">
+					<label for="last-name">Last Name</label>
+					{{ input('text', 'lastName', user.lastName, { id: 'last-name', class: user.hasErrors('lastName') ? 'error', autocomplete: 'family-name',  class: 'form-control',}) }}
+					{{ _self.errorList(user.getErrors('lastName')) }}
+				</div>
+				<div class="form-group">
+					{% if not craft.app.config.general.useEmailAsUsername %}
+						<label for="username">Username</label>
+						{{ input('text', 'username', user.username, { id: 'username', class: user.hasErrors('username') ? 'error', autocomplete: 'username',  class: 'form-control',}) }}
+						{{ _self.errorList(user.getErrors('username')) }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					{{ input('text', 'email', user.unverifiedEmail ?? user.email, { id: 'email', class: user.hasErrors('email') ? 'error', autocomplete: 'email', class: 'form-control', }) }}
+					{{ _self.errorList(user.getErrors('username')) }}
 
-  <label for="first-name">First Name</label>
-  {{ input('text', 'firstName', user.firstName, {
-    id: 'first-name',
-    class: user.hasErrors('firstName') ? 'error',
-    autocomplete: 'given-name',
-  }) }}
-  {{ _self.errorList(user.getErrors('firstName')) }}
+					{% if craft.app.projectConfig.get('users.requireEmailVerification') %}
+						<p>New email addresses need to be verified.</p>
+					{% endif %}
+				</div>
+				<div class="form-group">
+					<label for="new-password">New Password</label>
+					{{ input('password', 'newPassword', null, { id: 'new-password', class: user.hasErrors('newPassword') ? 'error', autocomplete: 'new-password', class: 'form-control', }) }}
+					{{ _self.errorList(user.getErrors('newPassword')) }}
+				</div>
+				<div class="form-group">
+					<label for="current-password">Current Password</label>
+					{{ input('password', 'password', null, { id: 'current-password', class: user.hasErrors('currentPassword') ? 'error', autocomplete: 'current-password', class: 'form-control', }) }}
+					{{ _self.errorList(user.getErrors('currentPassword')) }}
+				</div>
+				<button type="submit" class="btn btn-primary" style="margin-top:20px;">Save Profile</button>
+			</form>
 
-  <label for="last-name">Last Name</label>
-  {{ input('text', 'lastName', user.lastName, {
-    id: 'last-name',
-    class: user.hasErrors('lastName') ? 'error',
-    autocomplete: 'family-name',
-  }) }}
-  {{ _self.errorList(user.getErrors('lastName')) }}
+			{% if craft.session.isLoggedIn %}
+				<p class="text-center">
+					<a href="{{ logoutUrl }}">Logout Here</a>
+				</p>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
 
-  {% if user.photo %}
-    <label>Photo</label>
-    {{ user.photo.getImg({width: 150, height: 150})|attr({
-      id: 'user-photo',
-      alt: user.friendlyName,
-    }) }}
-
-    <label for="delete-photo">
-      {{ input('checkbox', 'deletePhoto', '1', {
-        id: 'delete-photo',
-      }) }}
-      Delete photo
-    </label>
-  {% endif %}
-
-  <label for="photo">Upload a new photo</label>
-  {{ input('file', 'photo', null, {
-    id: 'photo',
-    accept: 'image/png,image/jpeg',
-  }) }}
-
-  {% if not craft.app.config.general.useEmailAsUsername %}
-    <label for="username">Username</label>
-    {{ input('text', 'username', user.username, {
-      id: 'username',
-      class: user.hasErrors('username') ? 'error',
-      autocomplete: 'username',
-    }) }}
-    {{ _self.errorList(user.getErrors('username')) }}
-  {% endif %}
-
-  <label for="email">Email</label>
-  {{ input('text', 'email', user.unverifiedEmail ?? user.email, {
-    id: 'email',
-    class: user.hasErrors('email') ? 'error',
-    autocomplete: 'email',
-  }) }}
-  {{ _self.errorList(user.getErrors('username')) }}
-
-  {% if craft.app.projectConfig.get('users.requireEmailVerification') %}
-    <p>New email addresses need to be verified.</p>
-  {% endif %}
-
-  <label for="new-password">New Password</label>
-  {{ input('password', 'newPassword', null, {
-    id: 'new-password',
-    class: user.hasErrors('newPassword') ? 'error',
-    autocomplete: 'new-password',
-  }) }}
-  {{ _self.errorList(user.getErrors('newPassword')) }}
-
-  <label for="current-password">Current Password</label>
-  {{ input('password', 'password', null, {
-    id: 'current-password',
-    class: user.hasErrors('currentPassword') ? 'error',
-    autocomplete: 'current-password',
-  }) }}
-  {{ _self.errorList(user.getErrors('currentPassword')) }}
-
-  <button type="submit">Save Profile</button>
-</form>
-
-{% if craft.session.isLoggedIn %}
-       <a href="{{ logoutUrl }}">Logout Here</a>
-{% endif %}
