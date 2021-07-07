@@ -1,0 +1,265 @@
+field: 58ae8209-802f-49f0-8a16-c3404c9c60b1 # User Specialties
+fieldLayouts:
+  34cc1fc3-58c1-416d-b3d1-0a3dc7c98575:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a49d8a2d-b16d-4bfd-8f0a-72c2dbdce269 # Speciality
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c60f60ad-0ea5-4336-abbc-159fb5d35061 # Pgy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  a49d8a2d-b16d-4bfd-8f0a-72c2dbdce269: # Speciality
+    contentColumnType: string
+    fieldGroup: null
+    handle: speciality
+    instructions: ''
+    name: Speciality
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Abdominal Radiology (DR)'
+            -
+              - value
+              - abdominalRadiologyDr
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Addiction Psychiatry (P)'
+            -
+              - value
+              - addictionPsychiatryP
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adolescent Medicine (PD)'
+            -
+              - value
+              - adolescentMedicinePd
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adult Cardiothoracic Anesthesiology (AN)'
+            -
+              - value
+              - adultCardiothoracicAnesthesiologyAn
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adult Congenital Heart Disease'
+            -
+              - value
+              - adultCongenitalHeartDisease
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adult Reconstructive Orthopaedics (ORS)'
+            -
+              - value
+              - adultReconstructiveOrthopaedicsOrs
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Advanced Heart Failure and Transplant Cardiology (IM)'
+            -
+              - value
+              - advancedHeartFailureAndTransplantCardiologyIm
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Aerospace Medicine'
+            -
+              - value
+              - aerospaceMedicine
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Allergy and Immunology'
+            -
+              - value
+              - allergyAndImmunology
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Anesthesiology
+            -
+              - value
+              - anesthesiology
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Assistant Physician'
+            -
+              - value
+              - assistantPhysician
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Blood banking/transfusion medicine (PTH)'
+            -
+              - value
+              - bloodBankingTransfusionMedicinePth
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  c60f60ad-0ea5-4336-abbc-159fb5d35061: # Pgy
+    contentColumnType: string
+    fieldGroup: null
+    handle: pgy
+    instructions: ''
+    name: Pgy
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '---'
+            -
+              - value
+              - '---'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - PGY-1
+            -
+              - value
+              - pgy1
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - PGY-2
+            -
+              - value
+              - pgy2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - PGY-3
+            -
+              - value
+              - pgy3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - PGY-4
+            -
+              - value
+              - pgy4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - PGY-6
+            -
+              - value
+              - pgy6
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Attending
+            -
+              - value
+              - attending
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: matchPreference
+name: 'Match Preference'
+sortOrder: 1

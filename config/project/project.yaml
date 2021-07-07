@@ -1,8 +1,18 @@
-dateModified: 1625581092
+dateModified: 1625663631
 email:
-  fromEmail: mahjoor_samiullah@hotmail.com
+  fromEmail: craft@curatorwall.com
   fromName: 'Craft Samiullahmahjoor'
-  transportType: craft\mail\transportadapters\Sendmail
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    encryptionMethod: ssl
+    host: mail.curatorwall.com
+    password: 'FE&?rDcc3-wJ'
+    port: '465'
+    timeout: '10'
+    useAuthentication: '1'
+    username: craft@curatorwall.com
+  transportType: craft\mail\transportadapters\Smtp
 plugins:
   embed-boards:
     edition: standard

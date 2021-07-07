@@ -1,7 +1,8 @@
 {% extends '_layouts/layout_main' %}
-
 {% set body_class = 'page-home registeration' %}
-
+{% if craft.session.isLoggedIn %}
+	{% redirect '/account' %}
+{% endif %}
 {% block content %}
 
 	<header class="bg-primary bg-gradient text-white">
@@ -28,57 +29,37 @@
 				{{ redirectInput('/account') }}
 				<div class="form-group">
 					<label for="username">Username</label>
-					{{ 
-          input('text', 'username', user.username ?? null, {
-          id: 'username',
-          autocomplete: 'username',
-          class: 'form-control',
-        }) 
-        }}
+					{{ input('text', 'username', user.username ?? null, { id: 'username', autocomplete: 'username', class: 'form-control', }) }}
 					{{ user ? _self.errorList(user.getErrors('username')) }}
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>
-					{{ input('password', 'password', null, {
-           id: 'password',
-           class: 'form-control',
-         }) }}
+					{{ input('password', 'password', null, { id: 'password', class: 'form-control', }) }}
 					{{ user ? _self.errorList(user.getErrors('password')) }}
 				</div>
 
 				<div class="form-group">
 					<label for="firstName">First Name</label>
-					{{ input('text', 'firstName', user.firstName ?? null, {
-        id: 'firstName',
-        autocomplete: 'given-name',
-        class: 'form-control',
-      }) }}
+					{{ input('text', 'firstName', user.firstName ?? null, { id: 'firstName', autocomplete: 'given-name', class: 'form-control', }) }}
 					{{ user ? _self.errorList(user.getErrors('firstName')) }}
 				</div>
 				<div class="form-group">
 					<label for="lastName">Last Name</label>
-					{{ input('text', 'lastName', user.lastName ?? null, {
-        id: 'lastName',
-        autocomplete: 'family-name',
-        class: 'form-control',
-      }) }}
+					{{ input('text', 'lastName', user.lastName ?? null, { id: 'lastName', autocomplete: 'family-name', class: 'form-control', }) }}
 					{{ user ? _self.errorList(user.getErrors('lastName')) }}
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					{{ input('email', 'email', user.email ?? null, {
-        id: 'email',
-        autocomplete: 'email',
-        class: 'form-control',
-      }) }}
+					{{ input('email', 'email', user.email ?? null, {  id: 'email', autocomplete: 'email', class: 'form-control',  }) }}
 					{{ user ? _self.errorList(user.getErrors('email')) }}
 				</div>
 
 
 				<button type="submit" class="btn btn-primary" style="margin-top:20px;">Register</button>
-				<a class="btn btn-primary" href="/login">Login Here</a>
+				<a class="btn btn-primary" href="/login" style="margin-top:20px;">Login Here</a>
 			</form>
 
 		</div>
 	</div>
 {% endblock %}
+

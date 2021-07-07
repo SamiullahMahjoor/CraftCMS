@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 9582b605-12dd-49d4-ae55-6b9b0c9b3809 # Members
+handle: userSpecialties
+instructions: ''
+name: 'User Specialties'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_userspecialties}}'
+  maxBlocks: '5'
+  minBlocks: '5'
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: specialtyfilter
+name: 'Specialty Filter'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  ab98b48a-ec5f-485a-95a7-bac472bf7d4b: # Craft Custom
+    enabledByDefault: true
+    hasUrls: true
+    template: _account\specialty-filter
+    uriFormat: specialtyfilter
+type: single
