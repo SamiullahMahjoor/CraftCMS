@@ -17,7 +17,16 @@ fieldLayouts:
             fieldUid: c60f60ad-0ea5-4336-abbc-159fb5d35061 # Pgy
             instructions: null
             label: null
-            required: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bc177c6b-630f-4e7d-82f8-840622e1daf0 # Location
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -170,6 +179,26 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  bc177c6b-630f-4e7d-82f8-840622e1daf0: # Location
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: location
+    instructions: ''
+    name: Location
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '0'
+      max: null
+      min: null
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
   c60f60ad-0ea5-4336-abbc-159fb5d35061: # Pgy
     contentColumnType: string
     fieldGroup: null
@@ -180,17 +209,6 @@ fields:
     settings:
       optgroups: true
       options:
-        -
-          __assoc__:
-            -
-              - label
-              - '---'
-            -
-              - value
-              - '---'
-            -
-              - default
-              - ''
         -
           __assoc__:
             -
@@ -232,6 +250,17 @@ fields:
             -
               - value
               - pgy4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - PGY-5
+            -
+              - value
+              - pgy5
             -
               - default
               - ''

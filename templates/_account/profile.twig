@@ -12,8 +12,8 @@
 	{% endmacro %}
 
 	{# If there were any validation errors, a `user` variable will be passed to the
-			   template, which contains the posted values and validation errors. If that’s not
-			   set, we’ll default to the current user. #}
+					   template, which contains the posted values and validation errors. If that’s not
+					   set, we’ll default to the current user. #}
 	{% set user = user ?? currentUser %}
 
 	{% if user.hasErrors() %}
@@ -78,7 +78,7 @@
 				<button type="submit" class="btn btn-primary" style="margin-top:20px;">Save Profile</button>
 			</form>
 
-			{% if craft.session.isLoggedIn %}
+			{% if not craft.app.user.isGuest %}
 				<p class="text-center">
 					<a href="{{ logoutUrl }}">Logout Here</a>
 				</p>

@@ -1,2 +1,45 @@
 isPublic: true
 name: 'Public Schema'
+scope:
+  - 'elements.drafts:read'
+  - 'elements.revisions:read'
+  - 'elements.inactive:read'
+  - 'sections.3845c4c9-fa28-4ab7-86b0-b636756af10d:read' # Account
+  - 'entrytypes.753d2166-e51a-499e-8745-0d8c5e808ed2:read' # account
+  - 'entrytypes.6dbd7906-1558-4038-88b4-41eb0188d7c3:read' # Profile
+  - 'sections.d32e5d10-a476-47f7-8ff7-2c592f7d8d9b:read' # Home
+  - 'entrytypes.1752bed3-69e3-490f-98fd-4f124341226a:read' # Home
+  - 'sections.54a3a08e-104c-45b4-a520-7c6d1aa9a720:read' # Login
+  - 'entrytypes.fb9593a8-03f3-4dfb-9ecf-141bc10ef33a:read' # Login
+  - 'sections.e9b29985-6327-4cde-b9f1-272959d4df86:read' # Reset Password
+  - 'entrytypes.0d787ab8-0977-4b53-9f17-ae77c01f015c:read' # Reset Password
+  - 'sections.08cb8a81-415a-4bc2-8a97-88c5858b01a2:read' # Set Password
+  - 'entrytypes.8e7df87d-c97a-4cfc-b80a-ba0e8bef65a0:read' # Set Password
+  - 'sections.9232e358-329e-4004-bddf-3444aabe9b9e:read' # Specialty Filter
+  - 'entrytypes.0330deee-71d6-423b-8d10-7a9e61828abf:read' # Specialty Filter
+  - 'volumes.9091ab01-e95f-4cdf-b2f1-0c00232fc58e:read' # Assets
+  - 'usergroups.everyone:read'
+  - 'usergroups.6f113f3d-e270-4bbb-a8f2-b1e9d870e1d5:read' # Members
+  - 'sections.3845c4c9-fa28-4ab7-86b0-b636756af10d:edit' # Account
+  - 'entrytypes.753d2166-e51a-499e-8745-0d8c5e808ed2:edit' # account
+  - 'entrytypes.753d2166-e51a-499e-8745-0d8c5e808ed2:create' # account
+  - 'entrytypes.753d2166-e51a-499e-8745-0d8c5e808ed2:save' # account
+  - 'entrytypes.753d2166-e51a-499e-8745-0d8c5e808ed2:delete' # account
+  - 'entrytypes.6dbd7906-1558-4038-88b4-41eb0188d7c3:edit' # Profile
+  - 'entrytypes.6dbd7906-1558-4038-88b4-41eb0188d7c3:create' # Profile
+  - 'entrytypes.6dbd7906-1558-4038-88b4-41eb0188d7c3:save' # Profile
+  - 'entrytypes.6dbd7906-1558-4038-88b4-41eb0188d7c3:delete' # Profile
+  - 'sections.d32e5d10-a476-47f7-8ff7-2c592f7d8d9b:edit' # Home
+  - 'entrytypes.1752bed3-69e3-490f-98fd-4f124341226a:save' # Home
+  - 'sections.54a3a08e-104c-45b4-a520-7c6d1aa9a720:edit' # Login
+  - 'entrytypes.fb9593a8-03f3-4dfb-9ecf-141bc10ef33a:save' # Login
+  - 'sections.e9b29985-6327-4cde-b9f1-272959d4df86:edit' # Reset Password
+  - 'entrytypes.0d787ab8-0977-4b53-9f17-ae77c01f015c:save' # Reset Password
+  - 'sections.08cb8a81-415a-4bc2-8a97-88c5858b01a2:edit' # Set Password
+  - 'entrytypes.8e7df87d-c97a-4cfc-b80a-ba0e8bef65a0:save' # Set Password
+  - 'sections.9232e358-329e-4004-bddf-3444aabe9b9e:edit' # Specialty Filter
+  - 'entrytypes.0330deee-71d6-423b-8d10-7a9e61828abf:save' # Specialty Filter
+  - 'volumes.9091ab01-e95f-4cdf-b2f1-0c00232fc58e:edit' # Assets
+  - 'volumes.9091ab01-e95f-4cdf-b2f1-0c00232fc58e:create' # Assets
+  - 'volumes.9091ab01-e95f-4cdf-b2f1-0c00232fc58e:save' # Assets
+  - 'volumes.9091ab01-e95f-4cdf-b2f1-0c00232fc58e:delete' # Assets

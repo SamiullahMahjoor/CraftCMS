@@ -28,7 +28,7 @@ class Settings extends Model
     /**
      * @var string
      */
-    public $site_title = 'Some Default';
+    public $someAttribute = 'Some Default';
 
     // Public Methods
     // =========================================================================
@@ -39,8 +39,8 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['site_title', 'string'],
-            ['site_title', 'default', 'value' => 'Some Default'],
+            ['someAttribute', 'string'],
+            ['someAttribute', 'default', 'value' => 'Some Default'],
         ];
     }
 }
